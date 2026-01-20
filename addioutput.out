@@ -1,0 +1,798 @@
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/project-vlsi -e /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/inst-env.yml -p /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/sky130.yml -p /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/build/sram_generator-output.json -p /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/sim-rtl.yml --obj_dir /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/build sim
+[96m[<global>] Loading hammer-vlsi libraries and reading settings[0m
+[96m[<global>] Loading technology 'hammer.technology.sky130'[0m
+[33m[<global>] Key technology.sky130.sky130_nda has a type str is not yet implemented[0m
+[33m[<global>] Key technology.sky130.openram_lib has a type str is not yet implemented[0m
+[33m[<global>] Key technology.sky130.dffram_lib has a type Optional[str] is not yet implemented[0m
+[33m[<global>] Key technology.sky130.pdk_home has a type Optional[str] is not yet implemented[0m
+[33m[<global>] Key technology.sky130.lvs_deck_sources has a type Optional[list[str]] is not yet implemented[0m
+[33m[<global>] Key technology.sky130.io_file has a type str is not yet implemented[0m
+[33m[tech] The install path: /path/to/skywater-src-nda does not exist, looked at key technology.sky130.sky130_nda[0m
+[96m[tech] Loaded Sky130 Tech[0m
+[96m[<global>] Starting simulation with tool 'vcs'[0m
+[37m[sim] Running sub-step 'write_gl_files'[0m
+[37m[sim] Running sub-step 'run_vcs'[0m
+Executing subprocess: /home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/bin/vcs -full64 -lca -debug_access+all -timescale=1ns/1ps -CC -I$(VCS_HOME)/include -notice -line +lint=all,noVCDE,noONGS,noUI +warn=noTMR -error=PCWM-L +v2k -debug +vcs+lic+wait +vcs+initreg+random +define+no_cache_mem +rad -quiet +define+DEBUG +incdir+../../src -sverilog /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ALU.v /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ALUdec.v /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/Riscv151.v /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/Memory151.v /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ExtMemModel.v /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/no_cache_mem.v /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/Cache.v /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/riscv_top.v /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/riscv_arbiter.v /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ALUTestbench.v /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ALUTestVectorTestbench.v /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/riscv_test_harness.v /home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v /home/ff/eecs151/fa24/sky130_srams/sram22_sky130_macros/sram22_512x32m4w32/sram22_512x32m4w32.v /home/ff/eecs151/fa24/sky130_srams/sram22_sky130_macros/sram22_64x32m4w32/sram22_64x32m4w32.v /home/ff/eecs151/fa24/sky130_srams/sram22_sky130_macros/sram22_512x64m4w8/sram22_512x64m4w8.v /home/ff/eecs151/fa24/sky130_srams/sram22_sky130_macros/sram22_512x32m4w8/sram22_512x32m4w8.v /home/ff/eecs151/fa24/sky130_srams/sram22_sky130_macros/sram22_64x24m4w24/sram22_64x24m4w24.v /home/ff/eecs151/fa24/sky130_srams/sram22_sky130_macros/sram22_256x32m4w8/sram22_256x32m4w8.v /home/ff/eecs151/fa24/sky130_srams/sram22_sky130_macros/sram22_64x4m4w2/sram22_64x4m4w2.v /home/ff/eecs151/fa24/sky130_srams/sram22_sky130_macros/sram22_2048x32m8w8/sram22_2048x32m8w8.v /home/ff/eecs151/fa24/sky130_srams/sram22_sky130_macros/sram22_1024x32m8w32/sram22_1024x32m8w32.v /home/ff/eecs151/fa24/sky130_srams/sram22_sky130_macros/sram22_1024x32m8w8/sram22_1024x32m8w8.v /home/ff/eecs151/fa24/sky130_srams/sram22_sky130_macros/sram22_64x32m4w8/sram22_64x32m4w8.v +define+CLOCK_PERIOD=20.00 +notimingcheck +delay_mode_zero -top rocketTestHarness -o /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/build/sim-rundir/simv
+
+Warning-[DBGACC_DBG] Multiple debug options being used
+  The debug switches '-debug_access' and '-debug*' are being used together.
+  For better performance, consider using only '-debug_access'.
+
+
+Error-[VERDI_VCS_MM] Possible VERDI_HOME and VCS_HOME mismatch
+  The Verdi tab and pli.a cannot be added to the 'vcs' compile command because
+  the file '/pli.a' could not be found.
+  Please check to make sure VERDI_HOME and VCS_HOME point to installations
+  that are either both 32-bits or both 64-bits.
+
+
+Warning-[LCA_FEATURES_ENABLED] Usage warning
+  LCA features enabled by '-lca' argument on the command line.  For more
+  information regarding list of LCA features please refer to Chapter "LCA
+  features" in the VCS Release Notes
+
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option 'debug=4' will be deprecated in a future release.  Please use
+  '-debug_acc+pp+f+fn+dmptf -debug_region+cell+encrypt' instead.
+
+
+Warning-[OPD] Override previous declaration
+../../src/ALUdec.v, 12
+  Previously declared
+  at:"/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ALUdec.v",
+  12
+  This module will be overridden by the last declaration.
+
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/Riscv151.v, 428
+  Null statement is used in following verilog source.
+  Source info:         if (reset) assert(s0_pc_reg == `PC_RESET);
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/Riscv151.v, 433
+  Null statement is used in following verilog source.
+  Source info:                 3'b000: assert(dcache_we == 4'b0001); // sb:
+  write only the lowest byte
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/Riscv151.v, 434
+  Null statement is used in following verilog source.
+  Source info:                 3'b001: assert(dcache_we == 4'b0011); // sh:
+  write the lowest 2 bytes
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/Riscv151.v, 435
+  Null statement is used in following verilog source.
+  Source info:                 3'b010: assert(dcache_we == 4'b1111); // sw:
+  write all 4 bytes
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/Riscv151.v, 443
+  Null statement is used in following verilog source.
+  Source info:                 3'b000: assert(&wb_data[31:8] == 1'b0 ||
+  &wb_data[31:8] == 1'b1); // uper 24 bits
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/Riscv151.v, 444
+  Null statement is used in following verilog source.
+  Source info:                 3'b001: assert(&wb_data[31:16] == 1'b0 ||
+  &wb_data[31:16] == 1'b1); // upper 16 bits
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/Riscv151.v, 448
+  Null statement is used in following verilog source.
+  Source info:         assert(rf.regs[0] == 0);
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ALUTestbench.v, 90
+  Null statement is used in following verilog source.
+  Source info:             #1;
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ALUTestbench.v, 106
+  Null statement is used in following verilog source.
+  Source info:             #1;
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ALUTestbench.v, 113
+  Null statement is used in following verilog source.
+  Source info:             #1;
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ALUTestbench.v, 120
+  Null statement is used in following verilog source.
+  Source info:             #1;
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ALUTestbench.v, 127
+  Null statement is used in following verilog source.
+  Source info:             #1;
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ALUTestbench.v, 134
+  Null statement is used in following verilog source.
+  Source info:             #1;
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ALUTestbench.v, 144
+  Null statement is used in following verilog source.
+  Source info:             #1;
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ALUTestbench.v, 150
+  Null statement is used in following verilog source.
+  Source info:             #1;
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ALUTestbench.v, 156
+  Null statement is used in following verilog source.
+  Source info:             #1;
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ALUTestbench.v, 162
+  Null statement is used in following verilog source.
+  Source info:             #1;
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ALUTestbench.v, 168
+  Null statement is used in following verilog source.
+  Source info:             #1;
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ALUTestbench.v, 174
+  Null statement is used in following verilog source.
+  Source info:             #1;
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ALUTestbench.v, 193
+  Null statement is used in following verilog source.
+  Source info:         #1;
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ALUTestbench.v, 199
+  Null statement is used in following verilog source.
+  Source info:         #1;
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ALUTestbench.v, 209
+  Null statement is used in following verilog source.
+  Source info:         #1;
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ALUTestbench.v, 219
+  Null statement is used in following verilog source.
+  Source info:         #1;
+
+
+Lint-[NS] Null statement
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/riscv_test_harness.v, 193
+  Null statement is used in following verilog source.
+  Source info:       #0.1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4519
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4518
+  ?    (x0) b    ?    : ?: -;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4519
+  ?    (x0) ?    x    : ?: -;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4573
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4571
+  ?    (x0) 0    ?    ?    : ?: -;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4573
+  ?    (x0) ?    0    x    : ?: -;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4573
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4572
+  ?    (x0) 1    0    ?    : ?: -;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4573
+  ?    (x0) ?    0    x    : ?: -;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4627
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4625
+  ?    (x0) 1    ?    ?    : ?: -;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4627
+  ?    (x0) ?    0    x    : ?: -;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4627
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4626
+  ?    (x0) 0    0    ?    : ?: -;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4627
+  ?    (x0) ?    0    x    : ?: -;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4688
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4687
+  ?    (x1) ?    ?    0    x    : ?: -;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4688
+  ?    (x1) ?    0    ?    x    : ?: -;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4693
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4691
+  ?    (x0) 0    0    ?    ?    : ?: -;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4693
+  ?    (x0) ?    0    0    x    : ?: -;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4693
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4692
+  ?    (x0) 1    ?    0    ?    : ?: -;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4693
+  ?    (x0) ?    0    0    x    : ?: -;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4699
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4698
+  ?    f    ?    0    ?    ?    : ?: -;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4699
+  ?    f    ?    ?    0    ?    : ?: -;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4701
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4700
+  ?    b    *    0    ?    ?    : ?: -;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4701
+  ?    b    *    ?    0    ?    : ?: -;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4736
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4735
+  ?    (x1) ?    ?    0    x    : ?: -;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4736
+  ?    (x1) ?    0    ?    x    : ?: -;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4741
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4739
+  ?    (x0) 0    0    ?    ?    : ?: -;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4741
+  ?    (x0) ?    0    0    x    : ?: -;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4741
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4740
+  ?    (x0) 1    ?    0    ?    : ?: -;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4741
+  ?    (x0) ?    0    0    x    : ?: -;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4747
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4746
+  ?    f    ?    0    ?    ?    : ?: -;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4747
+  ?    f    ?    ?    0    ?    : ?: -;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4749
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4748
+  ?    b    *    0    ?    ?    : ?: -;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4749
+  ?    b    *    ?    0    ?    : ?: -;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4813
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4811
+  ?    1    1    ?    0    : ?: 1;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4813
+  ?    ?    ?    1    0    : ?: 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4814
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4812
+  ?    1    0    0    ?    : ?: 0;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4814
+  ?    ?    ?    ?    1    : ?: 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4820
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4816
+  ?    0    ?    *    0    : 1: 1;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4820
+  ?    ?    1    *    0    : 1: 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4821
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4817
+  ?    0    ?    0    *    : 0: 0;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4821
+  ?    ?    0    0    *    : 0: 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4838
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4836
+  ?    1    1    ?    0    : ?: 1;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4838
+  ?    ?    ?    1    ?    : ?: 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4839
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4837
+  ?    1    0    0    ?    : ?: 0;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4839
+  ?    ?    ?    0    1    : ?: 0;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4845
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4841
+  ?    0    ?    *    0    : 1: 1;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4845
+  ?    ?    1    *    0    : 1: 1;
+
+
+Lint-[OUDPE] UDP Entries Overlap
+/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v, 4846
+  Following UDP entries overlap each other as possibly they could have exactly
+  same set of input and output values.
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4842
+  ?    0    ?    0    *    : 0: 0;
+  "/home/ff/eecs151/fa24/pdk/sky130_scl_9T_0.0.5/verilog/sky130_scl_9T.v",
+  4846
+  ?    ?    0    0    *    : 0: 0;
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/Riscv151.v, 69
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: booted <= 0;
+  Expression: booted
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/Riscv151.v, 71
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: booted <= 1;
+  Expression: booted
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/no_cache_mem.v, 68
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 128-bit LHS target:
+  Source info: ram[i] = 0;
+  Expression: ram[i]
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/riscv_test_harness.v, 13
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: clk = 0;
+  Expression: clk
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/riscv_test_harness.v, 14
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: reset = 1;
+  Expression: reset
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/riscv_test_harness.v, 16
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: start = 0;
+  Expression: start
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/riscv_test_harness.v, 97
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: max_cycles = 0;
+  Expression: max_cycles
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/riscv_test_harness.v, 98
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: trace_count = 0;
+  Expression: trace_count
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/riscv_test_harness.v, 99
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1024-bit LHS target:
+  Source info: loadmem = 0;
+  Expression: loadmem
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/riscv_test_harness.v, 100
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1024-bit LHS target:
+  Source info: vcdplusfile = 0;
+  Expression: vcdplusfile
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/riscv_test_harness.v, 101
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1024-bit LHS target:
+  Source info: vcdfile = 0;
+  Expression: vcdfile
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/riscv_test_harness.v, 102
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: stats_active = 0;
+  Expression: stats_active
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/riscv_test_harness.v, 103
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: stats_tracking = 0;
+  Expression: stats_tracking
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/riscv_test_harness.v, 104
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: verbose = 0;
+  Expression: verbose
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/riscv_test_harness.v, 186
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 256-bit LHS target:
+  Source info: reason = 0;
+  Expression: reason
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/riscv_test_harness.v, 156
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: verbose = $test$plusargs("verbose");
+  Expression: verbose
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/riscv_test_harness.v, 158
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: stats_active = $test$plusargs("stats");
+  Expression: stats_active
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/riscv_test_harness.v, 182
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: reset = 0;
+  Expression: reset
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/riscv_test_harness.v, 203
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 56-bit wide expression is assigned to a 256-bit LHS target:
+  Source info: reason = "timeout";
+  Expression: reason
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ExtMemModel.v, 49
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 1-bit wide expression is assigned to a 128-bit LHS target:
+  Source info: ram[i] = 1'b0;
+  Expression: ram[i]
+
+
+Lint-[ULCO] Unequal length in comparison operator
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ExtMemModel.v, 65
+ExtMemModel, "(cnt == (DATA_CYCLES - 1))"
+  A left 2-bit expression is compared to a right 32-bit expression.
+  Comparing 'cnt' of type reg [(((DATA_CYCLES > (2 ** 30)) ? 31 :
+  ((DATA_CYCLES > (2 ** 29)) ? 30 : ((DATA_CYCLES > (2 ** 28)) ? 29 :
+  ((DATA_CYCLES > (2 ** 27)) ? 28 : ((DATA_CYCLES > (2 ** 26)) ? 27 :
+  ((DATA_CYCLES > (2 ** 25)) ? 26 : ((DATA_CYCLES > (2 ** 24)) ? 25 :
+  ((DATA_CYCLES > (2 ** 23)) ? 24 : ((DATA_CYCLES > (2 ** 22)) ? 23 :
+  ((DATA_CYCLES > (2 ** 21)) ? 22 : ((DATA_CYCLES > (2 ** 20)) ? 21 :
+  ((DATA_CYCLES > (2 ** 19)) ? 20 : ((DATA_CYCLES > (2 ** 18)) ? 19 :
+  ((DATA_CYCLES > (2 ** 17)) ? 18 : ((DATA_CYCLES > (2 ** 16)) ? 17 :
+  ((DATA_CYCLES > (2 ** 15)) ? 16 : ((DATA_CYCLES > (2 ** 14)) ? 15 :
+  ((DATA_CYCLES > (2 ** 13)) ? 14 : ((DATA_CYCLES > (2 ** 12)) ? 13 :
+  ((DATA_CYCLES > (2 ** 11)) ? 12 : ((DATA_CYCLES > (2 ** 10)) ? 11 :
+  ((DATA_CYCLES > (2 ** 9)) ? 10 : ((DATA_CYCLES > (2 ** 8)) ? 9 :
+  ((DATA_CYCLES > (2 ** 7)) ? 8 : ((DATA_CYCLES > (2 ** 6)) ? 7 :
+  ((DATA_CYCLES > (2 ** 5)) ? 6 : ((DATA_CYCLES > (2 ** 4)) ? 5 :
+  ((DATA_CYCLES > (2 ** 3)) ? 4 : ((DATA_CYCLES > (2 ** 2)) ? 3 :
+  ((DATA_CYCLES > (2 ** 1)) ? 2 : ((DATA_CYCLES > (2 ** 0)) ? 1 :
+  0))))))))))))))))))))))))))))))) - 1):0]
+  with '(DATA_CYCLES - 1)' of type int.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/ExtMemModel.v, 78
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 1-bit wide expression is assigned to a 2-bit LHS target:
+  Source info: cnt <= 1'b0;
+  Expression: cnt
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/Riscv151.v, 428
+Riscv151
+  Unnamed Assertion found in design
+  \assert((s0_pc_reg == 32'h00002000));
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/Riscv151.v, 433
+Riscv151
+  Unnamed Assertion found in design
+  \assert((dcache_we == 4'b1));
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/Riscv151.v, 434
+Riscv151
+  Unnamed Assertion found in design
+  \assert((dcache_we == 4'b0011));
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/Riscv151.v, 435
+Riscv151
+  Unnamed Assertion found in design
+  \assert((dcache_we == 4'b1111));
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/Riscv151.v, 443
+Riscv151
+  Unnamed Assertion found in design
+  \assert((((&wb_data[31:8]) == 1'b0) || ((&wb_data[31:8]) == 1'b1)));
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/Riscv151.v, 444
+Riscv151
+  Unnamed Assertion found in design
+  \assert((((&wb_data[31:16]) == 1'b0) || ((&wb_data[31:16]) == 1'b1)));
+
+
+Lint-[SVA-UA] Unnamed Assertion
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/Riscv151.v, 448
+Riscv151
+  Unnamed Assertion found in design
+  \assert((Riscv151.rf.regs[0] == 0));
+
+2 modules and 0 UDP read.
+Generating code for _VCSgd_reYIK
+Generating code for _VCSgd_DKG4c
+Generating code for _VCSgd_H8tis
+make[1]: Entering directory '/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/build/sim-rundir/csrc'
+make[1]: Leaving directory '/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/build/sim-rundir/csrc'
+make[1]: Entering directory '/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/build/sim-rundir/csrc'
+/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/build/sim-rundir/simv up to date
+make[1]: Leaving directory '/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/build/sim-rundir/csrc'
+/home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/bin/vcs: line 30656: 1072522 Segmentation fault      (core dumped) ${TOOL_HOME}/bin/cfs_ident_exec -f ${XML_INPUT_EXE} -o "${fsearchDir}/idents_tapi.xml" -o_SrcFile "${dirSrcFiles}/src_files_c" ${all_dyn_libs} > tapi_xml_writer.log
+[37m[sim] Running sub-step 'run_simulation'[0m
+[33m[sim] Not running any simulations because sim.inputs.execute_sim is unset.[0m
+Action sim config output written to output.json
+make runtest
+make[1]: Entering directory '/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices'
+cd /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/tests/asm && make -f /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/tests/asm/Makefile
+make[2]: Entering directory '/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/tests/asm'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/tests/asm'
+mkdir -p /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/asm_output
+cd /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/build/sim-rundir && /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/build/sim-rundir/simv -q +ntb_random_seed_automatic  +verbose +max-cycles=50000 +loadmem=/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/tests/asm/addi.hex 2> /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/asm_output/addi.out && [ $PIPESTATUS -eq 0 ]
+Notice: timing checks disabled with +notimingcheck at compile-time
+NOTE: automatic random seed used: 3200036778
+ADDI DEBUG: time=0 | PC=6e9b73dd | rs1=x5, rs1_data=5c8e6fb9 | imm_out=45c29f8b | A=xxxxxxxx | B=xxxxxxxx | ALU=xxxxxxxx | s2_PCSel=0
+Cycle = 0 | PC = 6e9b73dd | Inst = e8b2dad1 | rs1_data = 5c8e6fb9 | rs2_data = 8b3dfe16 | ALU = xxxxxxxx | S2 ALU = 374a656e | WB_sel = 2 | wb = 6b0635d6 | csr = 00000000
+"/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/Riscv151.v", 448: rocketTestHarness.dut.cpu.unnamed$$_6: started at 0ps failed at 0ps
+	Offending '(Riscv151.rf.regs[0] == 0)'
+ADDI DEBUG: time=10000 | PC=800a8c00 | rs1=x13, rs1_data=1ac90d35 | imm_out=45c29f8b | A=1ac90d35 | B=5c8e6fb9 | ALU=77577cee | s2_PCSel=0
+"/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/Riscv151.v", 428: rocketTestHarness.dut.cpu.unnamed$$_0: started at 10000ps failed at 10000ps
+	Offending '(s0_pc_reg == 32'h00002000)'
+ADDI DEBUG: time=30000 | PC=00000000 | rs1=x0, rs1_data=00000000 | imm_out=45c29f8b | A=00000000 | B=00000000 | ALU=00000000 | s2_PCSel=0
+ADDI DEBUG: time=50000 | PC=00000000 | rs1=x0, rs1_data=00000000 | imm_out=45c29f8b | A=00000000 | B=00000000 | ALU=00000000 | s2_PCSel=0
+ADDI DEBUG: time=70000 | PC=00000000 | rs1=x0, rs1_data=00000000 | imm_out=45c29f8b | A=00000000 | B=00000000 | ALU=00000000 | s2_PCSel=0
+ADDI DEBUG: time=90000 | PC=00000000 | rs1=x0, rs1_data=00000000 | imm_out=45c29f8b | A=00000000 | B=00000000 | ALU=00000000 | s2_PCSel=0
+ADDI DEBUG: time=110000 | PC=00000000 | rs1=x0, rs1_data=00000000 | imm_out=45c29f8b | A=00000000 | B=00000000 | ALU=00000000 | s2_PCSel=0
+ADDI DEBUG: time=130000 | PC=00000000 | rs1=x0, rs1_data=00000000 | imm_out=45c29f8b | A=00000000 | B=00000000 | ALU=00000000 | s2_PCSel=0
+Cycle = 130000 | PC = 00000000 | Inst = 00000000 | rs1_data = 00000000 | rs2_data = 00000000 | ALU = 00000000 | S2 ALU = 00000000 | WB_sel = 1 | wb = 00000000 | csr = 00000000
+ADDI DEBUG: time=150000 | PC=00002000 | rs1=x28, rs1_data=7bc48bf7 | imm_out=45c29f8b | A=7bc48bf7 | B=6b0635d6 | ALU=e6cac1cd | s2_PCSel=0
+Cycle = 150000 | PC = 00002000 | Inst = 5c8e6fb9 | rs1_data = 7bc48bf7 | rs2_data = 6b0635d6 | ALU = e6cac1cd | S2 ALU = 00000000 | WB_sel = 1 | wb = 00000000 | csr = 00000000
+ADDI DEBUG: time=170000 | PC=00002004 | rs1=xx, rs1_data=xxxxxxxx | imm_out=45c29f8b | A=xxxxxxxx | B=xxxxxxxx | ALU=xxxxxxxx | s2_PCSel=0
+Cycle = 170000 | PC = 00002004 | Inst = xxxxxxxx | rs1_data = xxxxxxxx | rs2_data = xxxxxxxx | ALU = xxxxxxxx | S2 ALU = e6cac1cd | WB_sel = 1 | wb = e6cac1cd | csr = 00000000
+ADDI DEBUG: time=190000 | PC=00002008 | rs1=x0, rs1_data=00000000 | imm_out=00000004 | A=00002008 | B=00000004 | ALU=0000200c | s2_PCSel=x
+Cycle = 190000 | PC = 00002008 | Inst = 00000013 | rs1_data = 00000000 | rs2_data = 45c29f8b | ALU = 0000200c | S2 ALU = xxxxxxxx | WB_sel = x | wb = 00000000 | csr = 00000000
+ADDI DEBUG: time=210000 | PC=00000000 | rs1=x0, rs1_data=00000000 | imm_out=00000000 | A=00000000 | B=00000000 | ALU=00000000 | s2_PCSel=1
+Cycle = 210000 | PC = 00000000 | Inst = 00000013 | rs1_data = 00000000 | rs2_data = 00000000 | ALU = 00000000 | S2 ALU = 0000200c | WB_sel = 2 | wb = 0000200c | csr = 00000000
+ADDI DEBUG: time=230000 | PC=0000200c | rs1=x0, rs1_data=00000000 | imm_out=00000000 | A=00000000 | B=265cb34c | ALU=265cb34c | s2_PCSel=0
+Cycle = 230000 | PC = 0000200c | Inst = 51e05073 | rs1_data = 00000000 | rs2_data = 265cb34c | ALU = 265cb34c | S2 ALU = 00000000 | WB_sel = 1 | wb = 00000000 | csr = 00000000
+ADDI DEBUG: time=250000 | PC=00002010 | rs1=x0, rs1_data=00000000 | imm_out=00000000 | A=00000000 | B=00000000 | ALU=00000000 | s2_PCSel=0
+Cycle = 250000 | PC = 00002010 | Inst = 00000093 | rs1_data = 00000000 | rs2_data = 00000000 | ALU = 00000000 | S2 ALU = 265cb34c | WB_sel = 1 | wb = 265cb34c | csr = 00000000
+ADDI DEBUG: time=270000 | PC=00002014 | rs1=x0, rs1_data=00000000 | imm_out=00000000 | A=00000000 | B=00000000 | ALU=00000000 | s2_PCSel=0
+Cycle = 270000 | PC = 00002014 | Inst = 00000093 | rs1_data = 00000000 | rs2_data = 00000000 | ALU = 00000000 | S2 ALU = 00000000 | WB_sel = 1 | wb = 00000000 | csr = 00000000
+ADDI DEBUG: time=290000 | PC=00002018 | rs1=x1, rs1_data=00000000 | imm_out=00000000 | A=00000000 | B=00000000 | ALU=00000000 | s2_PCSel=0
+Cycle = 290000 | PC = 00002018 | Inst = 00008713 | rs1_data = 00000000 | rs2_data = 00000000 | ALU = 00000000 | S2 ALU = 00000000 | WB_sel = 1 | wb = 00000000 | csr = 00000000
+ADDI DEBUG: time=310000 | PC=0000201c | rs1=x0, rs1_data=00000000 | imm_out=00000000 | A=00000000 | B=00000000 | ALU=00000000 | s2_PCSel=0
+Cycle = 310000 | PC = 0000201c | Inst = 00000393 | rs1_data = 00000000 | rs2_data = 00000000 | ALU = 00000000 | S2 ALU = 00000000 | WB_sel = 1 | wb = 00000000 | csr = 00000000
+ADDI DEBUG: time=330000 | PC=00002020 | rs1=x0, rs1_data=00000000 | imm_out=00000002 | A=00000000 | B=00000002 | ALU=00000002 | s2_PCSel=0
+Cycle = 330000 | PC = 00002020 | Inst = 00200193 | rs1_data = 00000000 | rs2_data = 6e9b73dd | ALU = 00000002 | S2 ALU = 00000000 | WB_sel = 1 | wb = 00000000 | csr = 00000000
+ADDI DEBUG: time=350000 | PC=00002024 | rs1=x14, rs1_data=00000000 | imm_out=00000278 | A=00002024 | B=00000278 | ALU=0000229c | s2_PCSel=0
+BNE DEBUG @ 350000 | PC = 00002024 | rs1_data = 00000000 | rs2_data = 00000000 | branch_taken = 0 | s2_branch_target = 00002022 | s2_alu_result = 00000002
+Cycle = 350000 | PC = 00002024 | Inst = 26771c63 | rs1_data = 00000000 | rs2_data = 00000000 | ALU = 0000229c | S2 ALU = 00000002 | WB_sel = 1 | wb = 00000002 | csr = 00000000
+ADDI DEBUG: time=370000 | PC=00002028 | rs1=x0, rs1_data=00000000 | imm_out=00000001 | A=00000000 | B=00000001 | ALU=00000001 | s2_PCSel=0
+Cycle = 370000 | PC = 00002028 | Inst = 00100093 | rs1_data = 00000000 | rs2_data = 00000000 | ALU = 00000001 | S2 ALU = 0000229c | WB_sel = 1 | wb = 0000229c | csr = 00000000
+ADDI DEBUG: time=390000 | PC=0000202c | rs1=x1, rs1_data=00000000 | imm_out=00000001 | A=00000000 | B=00000001 | ALU=00000001 | s2_PCSel=0
+Cycle = 390000 | PC = 0000202c | Inst = 00108713 | rs1_data = 00000000 | rs2_data = 00000000 | ALU = 00000001 | S2 ALU = 00000001 | WB_sel = 1 | wb = 00000001 | csr = 00000000
+ADDI DEBUG: time=410000 | PC=00002030 | rs1=x0, rs1_data=00000000 | imm_out=00000002 | A=00000000 | B=00000002 | ALU=00000002 | s2_PCSel=0
+Cycle = 410000 | PC = 00002030 | Inst = 00200393 | rs1_data = 00000000 | rs2_data = 6e9b73dd | ALU = 00000002 | S2 ALU = 00000001 | WB_sel = 1 | wb = 00000001 | csr = 00000000
+ADDI DEBUG: time=430000 | PC=00002034 | rs1=x0, rs1_data=00000000 | imm_out=00000003 | A=00000000 | B=00000003 | ALU=00000003 | s2_PCSel=0
+Cycle = 430000 | PC = 00002034 | Inst = 00300193 | rs1_data = 00000000 | rs2_data = 00000002 | ALU = 00000003 | S2 ALU = 00000002 | WB_sel = 1 | wb = 00000002 | csr = 00000000
+ADDI DEBUG: time=450000 | PC=00002038 | rs1=x14, rs1_data=00000001 | imm_out=00000264 | A=00002038 | B=00000264 | ALU=0000229c | s2_PCSel=0
+BNE DEBUG @ 450000 | PC = 00002038 | rs1_data = 00000001 | rs2_data = 00000002 | branch_taken = 1 | s2_branch_target = 00002037 | s2_alu_result = 00000003
+Cycle = 450000 | PC = 00002038 | Inst = 00000013 | rs1_data = 00000001 | rs2_data = 00000002 | ALU = 0000229c | S2 ALU = 00000003 | WB_sel = 1 | wb = 00000003 | csr = 00000000
+ADDI DEBUG: time=470000 | PC=00000000 | rs1=x0, rs1_data=00000000 | imm_out=00000000 | A=00000000 | B=00000000 | ALU=00000000 | s2_PCSel=1
+Cycle = 470000 | PC = 00000000 | Inst = 00000013 | rs1_data = 00000000 | rs2_data = 00000000 | ALU = 00000000 | S2 ALU = 0000229c | WB_sel = 1 | wb = 0000229c | csr = 00000000
+ADDI DEBUG: time=490000 | PC=0000229c | rs1=x0, rs1_data=00000000 | imm_out=00000003 | A=00000000 | B=00000003 | ALU=00000003 | s2_PCSel=0
+Cycle = 490000 | PC = 0000229c | Inst = 00300093 | rs1_data = 00000000 | rs2_data = 00000003 | ALU = 00000003 | S2 ALU = 00000000 | WB_sel = 1 | wb = 00000000 | csr = 00000000
+ADDI DEBUG: time=510000 | PC=000022a0 | rs1=x0, rs1_data=00000000 | imm_out=0000000a | A=00000000 | B=0000000a | ALU=0000000a | s2_PCSel=0
+Cycle = 510000 | PC = 000022a0 | Inst = 00a00393 | rs1_data = 00000000 | rs2_data = 7163b1e2 | ALU = 0000000a | S2 ALU = 00000003 | WB_sel = 1 | wb = 00000003 | csr = 00000000
+ADDI DEBUG: time=530000 | PC=000022a4 | rs1=x3, rs1_data=00000003 | imm_out=0000000a | A=00000003 | B=265cb34c | ALU=265cb34f | s2_PCSel=0
+Cycle = 530000 | PC = 000022a4 | Inst = 51e19073 | rs1_data = 00000003 | rs2_data = 265cb34c | ALU = 265cb34f | S2 ALU = 0000000a | WB_sel = 1 | wb = 0000000a | csr = 00000000
+$finish called from file "/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/src/riscv_test_harness.v", line 212.
+$finish at simulation time               530100
+
+  [ FAILED ] /home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices/asm_output/addi.out	 (tohost =          3) after 28 simulation cycles
+
+make[1]: Leaving directory '/home/tmp/eecs151-abl/asic-project-sp25-pineapple-slices'
