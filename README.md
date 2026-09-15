@@ -61,10 +61,12 @@ Makefile        Simulation, synthesis, and PAR build targets
 # How to Run
 bash
 
- #Run a single assembly test
+ #Run a single assembly test:
+
 make sim-rtl test_asm=addi.out
 
- #Run the full assembly test suite
+ #Run the full assembly test suite:
+
 make sim-rtl test_asm=all
 
 # Roadmap
